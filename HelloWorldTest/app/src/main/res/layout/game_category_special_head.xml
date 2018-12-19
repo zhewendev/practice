@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="6dip">
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"/>
+    <include
+        android:id="@+id/game_category_special_re1"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_toLeftOf="@id/line"
+        android:layout_marginRight="3dip"
+        layout="@layout/game_category_special_head_item"/>
+
+    <include
+        android:id="@+id/game_category_special_re2"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        layout="@layout/game_category_special_head_item"
+        android:layout_toRightOf="@id/game_category_special_re1"
+        android:layout_marginLeft="3dip"
+        android:layout_alignTop="@id/game_category_special_re1"
+        android:layout_alignParentRight="true"/>
+
+    <include
+        android:id="@+id/game_category_special_re3"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        layout="@layout/game_category_special_head_item"
+        android:layout_below="@id/game_category_special_re1"
+        android:layout_toLeftOf="@id/line"
+        android:layout_marginTop="6dip"
+        android:layout_marginRight="3dip"/>
+
+    <include
+        android:id="@+id/game_category_special_re4"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        layout="@layout/game_category_special_head_item"
+        android:layout_toRightOf="@id/game_category_special_re3"
+        android:layout_marginLeft="3dip"
+        android:layout_alignTop="@id/game_category_special_re3"
+        android:layout_alignParentRight="true"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/game_category_special_iv1"-->
+        <!--android:layout_width="@dimen/game_category_head_special_width"-->
+        <!--android:layout_height="@dimen/game_category_head_special_height"-->
+        <!--android:src="@drawable/game_default_category_icon"-->
+        <!--android:scaleType="fitXY"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/game_category_special_iv2"-->
+        <!--android:layout_width="@dimen/game_category_head_special_width"-->
+        <!--android:layout_height="@dimen/game_category_head_special_height"-->
+        <!--android:layout_toRightOf="@id/game_category_special_iv1"-->
+        <!--android:layout_marginLeft="@dimen/game_common_item_divide"-->
+        <!--android:layout_alignTop="@id/game_category_special_iv1"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:src="@drawable/game_default_category_icon"-->
+        <!--android:scaleType="fitXY"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/game_category_special_iv3"-->
+        <!--android:layout_width="@dimen/game_category_head_special_width"-->
+        <!--android:layout_height="@dimen/game_category_head_special_height"-->
+        <!--android:layout_below="@id/game_category_special_iv1"-->
+        <!--android:layout_marginTop="@dimen/game_common_item_divide"-->
+        <!--android:src="@drawable/game_default_category_icon"-->
+        <!--android:scaleType="fitXY"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/game_category_special_iv4"-->
+        <!--android:layout_width="@dimen/game_category_head_special_width"-->
+        <!--android:layout_height="@dimen/game_category_head_special_height"-->
+        <!--android:layout_toRightOf="@id/game_category_special_iv3"-->
+        <!--android:layout_marginLeft="@dimen/game_common_item_divide"-->
+        <!--android:layout_alignTop="@id/game_category_special_iv3"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:src="@drawable/game_default_category_icon"-->
+        <!--android:scaleType="fitXY"/>-->
+
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game_category_special_head_item_re"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0ffade"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/game_category_special_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:text="男生必备" />
+
+    <ImageView
+        android:id="@+id/game_category_special_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_toRightOf="@id/game_category_special_text"
+        android:layout_marginLeft="6dip"/>
+
+</RelativeLayout>
