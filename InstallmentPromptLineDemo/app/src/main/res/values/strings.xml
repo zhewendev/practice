@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">InstallmentPromptLineDemo</string>
+    <string-array name="installment_periods_three">
+        <item>第1期</item>
+        <item>第3期</item>
+    </string-array>
+    <string-array name="installment_periods_six">
+        <item>第1期</item>
+        <item>第6期</item>
+    </string-array>
+    <string-array name="installment_periods_twelve">
+        <item>第1期</item>
+        <item>第12期</item>
+    </string-array>
+</resources>

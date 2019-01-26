@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InstallmentRepaymentPromptLineMarkerView">
+        <attr name="common_marker_size" format="dimension|reference"/>
+        <attr name="common_marker" format="color|reference"/>
+        <attr name="common_begin_line" format="color|reference"/>
+        <attr name="common_end_line" format="color|reference"/>
+        <attr name="common_line_size" format="dimension|reference"/>
+        <attr name="common_line_length" format="dimension|reference"/>
+    </declare-styleable>
+</resources>

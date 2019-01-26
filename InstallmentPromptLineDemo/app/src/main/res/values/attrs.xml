@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InstallmentPromptLine">
+        <attr name="min" format="float|reference"/>
+        <attr name="max" format="float|reference"/>
+        <attr name="progress" format="float|reference"/>
+        <!--<attr name="is_float_type" format="boolean"/>-->
+        <attr name="track_size" format="dimension|reference"/>
+        <attr name="node_radius" format="color|dimension|reference"/>
+        <!--<attr name="outer_node_radius" format="color|dimension|reference"/>-->
+        <attr name="track_color" format="color|reference"/>
+        <attr name="node_color" format="color|reference"/>
+        <!--<attr name="outer_node_border_color" format="color|reference"/>-->
+        <!--<attr name="outer_node_border_size" format="dimension|reference"/>-->
+        <attr name="sign_color" format="color|reference"/>
+        <attr name="sign_text_size" format="dimension|reference"/>
+        <attr name="sign_text_color" format="color|reference"/>
+        <attr name="sign_height" format="dimension|reference"/>
+        <attr name="sign_width" format="dimension|reference"/>
+        <attr name="show_sign" format="boolean"/>
+        <!--<attr name="show_section_mark" format="boolean"/>-->
+        <attr name="section_count" format="dimension|reference"/>
+        <attr name="show_section_text" format="boolean"/>
+        <attr name="section_text_color" format="color|reference"/>
+        <attr name="section_text_size" format="dimension|reference"/>
+        <!--<attr name="seek_by_section" format="boolean"/>-->
+        <attr name="section_text_position">
+            <enum name="sides" value="0"/>
+            <enum name="bottom_sides" value="1"/>
+            <enum name="below_section_mark" value="2"/>
+        </attr>
+        <attr name="show_node_text" format="boolean"/>
+        <attr name="node_text_size" format="dimension|reference"/>
+        <attr name="node_text_color" format="color|reference"/>
+        <attr name="text_space" format="dimension|reference"/>
+        <attr name="sign_arrow_height" format="dimension|reference"/>
+        <attr name="sign_arrow_width" format="dimension|reference"/>
+        <attr name="sign_round" format="dimension|reference"/>
+        <!--<attr name="sides_labels" format="reference"/>-->
+    </declare-styleable>
+</resources>

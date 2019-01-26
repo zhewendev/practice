@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textColor="#00ff00"
+        android:shadowColor="@color/colorAccent"
+        android:shadowDx="3.0"
         android:singleLine="true"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SignSeekBar">
+        <attr name="ssb_auto_adjust_section_mark" format="boolean"/> <!--自动滚动到最近的节点标签，默认为false-->
+        <attr name="ssb_second_track_color" format="color|reference"/>  <!--滑动节点的左轨迹颜色-->
+        <attr name="ssb_section_count" format="integer|reference"/> <!--节点与节点之间的间隔-->
+        <!--节点文本信心的位置-->
+        <attr name="ssb_section_text_position">
+            <enum name="sides" value="0"/>
+            <enum name="bottom_sides" value="1"/>
+            <enum name="below_section_mark" value="2"/>
+        </attr>
+        <attr name="ssb_show_section_mark" format="boolean"/>  <!--是否显示分界节点-->
+        <attr name="ssb_show_thumb_text" format="boolean"/> <!--是否显示实时进度文本信息-->
+        <attr name="ssb_show_sign" format="boolean"/> <!--是否显示节点符号-->
+        <attr name="ssb_track_color" format="color|reference"/> <!--滑动节点的右轨迹颜色-->
+        <attr name="ssb_track_size" format="dimension|reference"/>
+        <attr name="ssb_second_track_size" format="dimension|reference"/>
+        <attr name="ssb_thumb_radius" format="dimension|reference"/>
+        <attr name="ssb_thumb_outer_radius" format="dimension|reference"/>
+        <attr name="ssb_thumb_color" format="color|reference"/>
+        <attr name="ssb_show_section_text" format="boolean"/>
+        <attr name="ssb_section_text_size" format="dimension|reference"/>
+        <attr name="ssb_section_text_color" format="color|reference"/>
+        <attr name="ssb_thumb_text_size" format="dimension|reference"/>
+        <attr name="ssb_thumb_text_color" format="color|reference"/>
+        <attr name="ssb_sign_border_size" format="dimension|reference"/>
+        <attr name="ssb_sign_color" format="color|reference"/>
+        <attr name="ssb_sign_text_size" format="dimension|reference"/>
+        <attr name="ssb_sign_height" format="dimension|reference"/>
+        <attr name="ssb_sign_width" format="dimension|reference"/>
+        <attr name="ssb_text_space" format="dimension|reference"/>
+        <attr name="ssb_sign_arrow_height" format="dimension|reference"/>
+        <attr name="ssb_sign_arrow_width" format="dimension|reference"/>
+        <attr name="ssb_sign_round" format="dimension|reference"/>
+        <attr name="ssb_sign_text_color" format="color|reference"/>
+        <attr name="ssb_sign_border_color" format="color|reference"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.zhouyou.view.seekbar.SignSeekBar
+        android:id="@+id/demo_5_seek_bar_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:max="30"
+        app:min="0"
+        app:section_count="2"
+        app:section_text_position="sides"
+        app:show_progress_in_float="false"
+        app:show_section_mark="true"
+        app:show_section_text="false"
+        app:show_node_text="false"
+        app:node_radius="5dp"
+        app:outer_node_radius="7dp"
+        app:track_color="@color/color_red"
+        app:track_size="5dp"
+        app:sides_labels="@array/speed_labels"
+        app:section_text_color="@color/color_60"
+        app:section_text_size="14sp"
+        app:show_sign="true"
+        />
+</LinearLayout>
