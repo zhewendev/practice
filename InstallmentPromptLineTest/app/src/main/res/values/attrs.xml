@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="InstallmentPromptLine">
-        <attr name="common_radius" format="dimension"/>
+        <attr name="common_radius" format="dimension|reference"/>
         <attr name="common_icon_underway" format="color|reference"/>
         <attr name="common_icon_failed" format="color|reference"/>
         <attr name="common_icon_general" format="color|reference"/>
@@ -14,6 +14,6 @@
         <attr name="common_sign_arrow_height" format="dimension|reference"/>
         <attr name="common_sign_arrow_width" format="dimension|reference"/>
         <attr name="common_sign_round" format="dimension|reference"/>
-
+        <attr name="common_show_sign" format="boolean"/>
     </declare-styleable>
 </resources>
