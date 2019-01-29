@@ -5,10 +5,10 @@
         <attr name="line_height" format="integer"/>
         <attr name="dash_padding" format="integer"/>
         <attr name="dash_height" format="integer"/>
-        <attr name="orientation">
-            <enum name="vertical" value="0"/>
-            <enum name="horizontal" value="1"/>
-        </attr>
+        <!--<attr name="orientation">-->
+            <!--<enum name="vertical" value="0"/>-->
+            <!--<enum name="horizontal" value="1"/>-->
+        <!--</attr>-->
         <attr name="icon_completed" format="reference"/>
         <attr name="icon_uncompleted" format="reference"/>
         <attr name="icon_completing" format="reference"/>

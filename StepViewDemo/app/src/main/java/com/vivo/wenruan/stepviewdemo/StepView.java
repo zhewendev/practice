@@ -26,7 +26,7 @@ public class StepView extends View {
     private static final int DEFAULT_LINE_HEIGHT = 120;
     private static final int DEFAULT_DASH_PADDING = 6;
     private static final int DEFAULT_DASH_HEIGHT = 15;
-    private static final int ORIENTATION_VERTICAL = 0;
+//    private static final int ORIENTATION_VERTICAL = 0;
     private static final int ORIENTATION_HORIZONTAL = 1;
     private static final int DEFAULT_COMPLETED_DRAWABLE_ID = R.drawable.icon_check;
     private static final int DEFAULT_UNCOMPLETED_DRAWABLE_ID = R.drawable.icon_circle;
@@ -36,7 +36,7 @@ public class StepView extends View {
     private int mLineLength;    //线长度
     private int mDashPadding;   //破折号
     private int mDashLength;    //破折号长度
-    private int mOrientation;   //方向
+//    private int mOrientation;   //方向
     private int mCompletedDrawableResourceId;
     private int mUncompletedDrawableResourceId;
     private int mCompletingDrawableResourceId;
@@ -69,7 +69,7 @@ public class StepView extends View {
         mLineLength = typedArray.getInt(R.styleable.StepView_line_height, DEFAULT_LINE_HEIGHT);
         mDashPadding = typedArray.getInt(R.styleable.StepView_dash_padding, DEFAULT_DASH_PADDING);
         mDashLength = typedArray.getInt(R.styleable.StepView_dash_height, DEFAULT_DASH_HEIGHT);
-        mOrientation = typedArray.getInt(R.styleable.StepView_orientation, ORIENTATION_HORIZONTAL);
+//        mOrientation = typedArray.getInt(R.styleable.StepView_orientation, ORIENTATION_HORIZONTAL);
         mCompletedDrawableResourceId = typedArray.getResourceId(R.styleable.StepView_icon_completed,DEFAULT_COMPLETED_DRAWABLE_ID);
         mUncompletedDrawableResourceId = typedArray.getResourceId(R.styleable.StepView_icon_uncompleted,DEFAULT_UNCOMPLETED_DRAWABLE_ID);
         mCompletingDrawableResourceId = typedArray.getResourceId(R.styleable.StepView_icon_completing,DEFAULT_COMPLETING_DRAWABLE_ID);
@@ -89,7 +89,7 @@ public class StepView extends View {
         mCompletePaint.setTextSize(15);
         mUnCompleted = new Paint(Paint.ANTI_ALIAS_FLAG);
         mUnCompleted.setColor(Color.WHITE);
-        mUnCompleted.setStrokeWidth(4); //未完成线宽
+        mUnCompleted.setStrokeWidth(4); //未完成部分的线宽
 
         mCheckRect = new Rect(0, 0, mIconCompleted.getWidth(), mIconCompleted.getHeight());
         mExclamationMarkRect = new Rect(0, 0, mIconCompleting.getWidth(), mIconCompleting.getHeight());
@@ -123,8 +123,7 @@ public class StepView extends View {
             int centerX = mWidth / 2;
             int centerY = mHeight / 2;
             int bitmapCenter = mData.size() % 2 != 0 ? centerX - (centerIndex - i) * (mLineLength + mRadiu * 2) : (int) (centerX - (centerIndex - i + 0.5) * (mLineLength + mRadiu * 2));
-            Rect srcBitmapRect = mOrientation == ORIENTATION_HORIZONTAL ? new Rect(bitmapCenter - mRadiu, centerY - mRadiu, bitmapCenter + mRadiu, centerY + mRadiu) :
-                    new Rect(centerY - mRadiu, bitmapCenter - mRadiu, centerY + mRadiu, bitmapCenter + mRadiu);
+            Rect srcBitmapRect = new Rect(bitmapCenter - mRadiu, centerY - mRadiu, bitmapCenter + mRadiu, centerY + mRadiu);
             canvas.drawBitmap(item.getStatus() == MyStepInfoBean.StepStatus.COMPLETED ? mIconCompleted :
                     item.getStatus() == MyStepInfoBean.StepStatus.COMPLETING ? mIconCompleting :
                             mIconUncompleted, item.getStatus() == MyStepInfoBean.StepStatus.COMPLETED ? mCheckRect :
