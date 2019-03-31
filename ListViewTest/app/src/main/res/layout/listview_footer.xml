@@ -3,13 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
+    <!--<TextView-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:textSize="18sp"-->
+        <!--android:text="表尾"-->
+        <!--android:gravity="center"-->
+        <!--android:background="#000000"-->
+        <!--android:textColor="#FFFFFF"/>-->
     <TextView
-        android:layout_height="48dp"
         android:layout_width="match_parent"
-        android:textSize="18sp"
-        android:text="表尾"
+        android:layout_height="48dp"
         android:gravity="center"
-        android:background="#000000"
-        android:textColor="#FFFFFF"/>
+        android:background="#FFFFFFFF"/>
 
 </LinearLayout>

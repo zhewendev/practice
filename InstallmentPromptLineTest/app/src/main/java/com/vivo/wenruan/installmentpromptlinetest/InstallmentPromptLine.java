@@ -94,17 +94,16 @@ public class InstallmentPromptLine extends View {
         mIconGeneral = BitmapFactory.decodeResource(getResources(), mGeneralDrawableResourceId);
         mIconUnderway = BitmapFactory.decodeResource(getResources(), mUnderwayDrawableResourceId);
         mIconFailed = BitmapFactory.decodeResource(getResources(), mFailedDrawableResourceId);
-        mIconPaint = new Paint(Paint.ANTI_ALIAS_FLAG);  //抗锯齿
+        mIconPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mIconPaint.setStyle(Paint.Style.FILL);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.WHITE);
-        mPaint.setStrokeWidth(4);   //线宽
+        mPaint.setStrokeWidth(4);
         mPaint.setTextSize(mSectionTextSize);
         mSignPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mSignPaint.setStyle(Paint.Style.FILL);
         mSignPaint.setAntiAlias(true);
         mSignPaint.setColor(mSignColor);
-        //三个节点图标的绘制区域
         mGeneralRect = new Rect(0, 0, mIconGeneral.getWidth(), mIconGeneral.getHeight());
         mUnderwayRect = new Rect(0, 0, mIconUnderway.getWidth(), mIconUnderway.getHeight());
         mFailedRect = new Rect(0, 0, mIconFailed.getWidth(), mIconFailed.getHeight());
@@ -192,6 +191,7 @@ public class InstallmentPromptLine extends View {
         point2.set(centerX + mSignArrowWidth / 2, mSignHeight + mHeight);
         point3.set(centerX, mSignHeight + mSignArrowHeight + mHeight);
         drawTriangle(canvas, point1, point2, point3, mSignPaint);
+        invalidate();
 
     }
 
@@ -211,6 +211,7 @@ public class InstallmentPromptLine extends View {
         mTrianglePath.lineTo(point1.x, point1.y);
         mTrianglePath.close();
         canvas.drawPath(mTrianglePath, paint);
+        invalidate();
     }
 
     /**
@@ -228,6 +229,7 @@ public class InstallmentPromptLine extends View {
         mPaint.getTextBounds(str, 0, str.length(), mSignTextRect);
         float baseline = Math.abs(mSignTextRect.top) + mHeight + (mSignHeight - mSignTextRect.height()) / 2;
         canvas.drawText(str, centerX, baseline, mPaint);
+        invalidate();
 
     }
 
