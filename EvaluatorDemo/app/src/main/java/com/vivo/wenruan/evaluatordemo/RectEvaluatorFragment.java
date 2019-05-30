@@ -1,5 +1,6 @@
 package com.vivo.wenruan.evaluatordemo;
 
+import android.animation.IntArrayEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.RectEvaluator;
 import android.graphics.Rect;

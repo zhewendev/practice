@@ -14,24 +14,24 @@ import android.widget.Button;
 
 public class PointFEvaluatorFragment extends Fragment {
 
-    PointView mPointView = new PointView(getContext());
+    private MyPointView myPointView;
+    private static final int DURATION = 2000;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.rect_evaluator_fragment, container, false);
+        View view = inflater.inflate(R.layout.pointf_evaluator_fragment, container, false);
         initData(view);
         return view;
     }
 
     private void initData(View view) {
         Button button = (Button) view.findViewById(R.id.animator_btn);
+        myPointView = (MyPointView) view.findViewById(R.id.my_point_view);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator animator = ObjectAnimator.ofObject(mPointView, "Radius",
-                        new PointFEvaluator(), new PointF(0, 0), new PointF(1, 1));
-                animator.start();
+                myPointView.doAnimation();
             }
         });
     }

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     private void initFruits() {

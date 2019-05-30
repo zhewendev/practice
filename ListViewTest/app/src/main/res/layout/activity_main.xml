@@ -9,24 +9,27 @@
         android:layout_height="match_parent"
         android:divider="#EECCEE"
         android:dividerHeight="1dp"
-        android:headerDividersEnabled="true"
-        android:footerDividersEnabled="true"/>
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:stackFromBottom="true" />
+
     <RelativeLayout
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="12345684813"/>
+            android:text="12345684813" />
 
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_below="@id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:layout_below="@id/list_view">
 
     </RelativeLayout>
 

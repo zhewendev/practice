@@ -10,19 +10,41 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.fragment_jump_btn);
+        final Button button = (Button) findViewById(R.id.fragment_jump_btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new PointFEvaluatorFragment());
+
+                switch (flag) {
+                    case 0 :
+                        replaceFragment(new ArgbEvaluatorFragment());
+                        button.setText(getString(R.string.argbevaluator_fragment));
+                        flag++;
+                        break;
+                    case 1 :
+                        replaceFragment(new RectEvaluatorFragment());
+                        button.setText(getString(R.string.rectevaluator_fragment));
+                        flag++;
+                        break;
+                    case 2 :
+                        replaceFragment(new PointFEvaluatorFragment());
+                        button.setText(getString(R.string.pointf_evaluator_fragment));
+                        flag++;
+                        break;
+                    case 3 :
+                        replaceFragment(new ArrayEvaluatorFragment());
+                        button.setText(getString(R.string.arrayevaluagor_fragment));
+                        flag = 0;
+                        break;
+                }
             }
         });
-        replaceFragment(new ArgbEvaluatorFragment());
     }
 
     private void replaceFragment(Fragment fragment) {

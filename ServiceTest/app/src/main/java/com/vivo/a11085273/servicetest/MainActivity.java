@@ -3,6 +3,7 @@ package com.vivo.a11085273.servicetest;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         unbindService.setOnClickListener(this);
         Button startIntentService = (Button) findViewById(R.id.start_intent_service);
         startIntentService.setOnClickListener(this);
+        Button startForeService = (Button) findViewById(R.id.start_fore_service);
+        startForeService.setOnClickListener(this);
     }
 
     @Override
@@ -65,6 +68,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentService = new Intent(this, MyIntentService.class);
                 startService(intentService);
                 break;
+            case R.id.start_fore_service:
+                Intent foreIntentService = new Intent(this, ForeService.class);
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                {
+                    startForegroundService(foreIntentService);
+                }
+                else{
+                    startService(foreIntentService);
+                }
             default:
                 break;
 

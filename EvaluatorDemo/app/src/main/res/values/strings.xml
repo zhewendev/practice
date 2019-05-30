@@ -3,4 +3,9 @@
     <string name="button_text">fagment切换</string>
     <string name="start_animation">开始动画</string>
     <string name="vivo">vivo</string>
+    <string name="array_evaluator">array_evaluator</string>
+    <string name="argbevaluator_fragment">ArgbEvaluator Fragment</string>
+    <string name="rectevaluator_fragment">RectEvaluator Fragment</string>
+    <string name="pointf_evaluator_fragment">PointFEvaluator Fragment</string>
+    <string name="arrayevaluagor_fragment">IntArrayEvaluator FloatArrayEvaluator Fragment</string>
 </resources>

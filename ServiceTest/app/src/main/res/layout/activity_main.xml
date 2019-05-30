@@ -29,6 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start IntentService" />
+    <Button
+        android:id="@+id/start_fore_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start foreService"/>
 
 
 </LinearLayout>
