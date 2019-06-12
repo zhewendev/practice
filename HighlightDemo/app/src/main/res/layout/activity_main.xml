@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/id_container"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_show_highlight_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="show highlight guide"
+        android:textSize="20sp"
+        android:onClick="showHighlightGuide"/>
+
+    <Button
+        android:id="@+id/btn_show_next_highlight_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_show_highlight_guide"
+        android:layout_marginTop="20dp"
+        android:text="show next highlight guide"
+        android:textSize="20sp"
+        android:onClick="showNextHighlightGuide"/>
+
+    <TextView
+        android:id="@+id/tv_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_show_next_highlight_guide"
+        android:layout_margin="30dp"
+        android:text="高亮控件"
+        android:textSize="25sp"
+        android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/btn_right_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_alignParentEnd="true"
+        android:text="高亮控件2"
+        android:textSize="25sp"/>
+
+</RelativeLayout>
