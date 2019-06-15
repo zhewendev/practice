@@ -102,7 +102,7 @@ public class Highlight implements HighlightInterface, ViewTreeObserver.OnGlobalL
     }
 
     /**
-     * ?????????????????????
+     * 添加高亮控件绘制信息
      * @param viewId
      * @param decorLayoutId
      * @param onPosCallback
@@ -117,11 +117,11 @@ public class Highlight implements HighlightInterface, ViewTreeObserver.OnGlobalL
     }
 
     /**
-     * ???????????????????????????
-     * @param view
-     * @param decorLayoutId
-     * @param onPosCallback
-     * @param lightShape
+     * 添加高亮控件绘制信息
+     * @param view  需要高亮显示的控件
+     * @param decorLayoutId 高亮控件边需要绘制的布局
+     * @param onPosCallback 绘制布局位置信息
+     * @param lightShape    高亮形状
      * @return
      */
     public Highlight addHighlight(View view, int decorLayoutId, OnPosCallback onPosCallback, LightShape lightShape) {
@@ -130,7 +130,7 @@ public class Highlight implements HighlightInterface, ViewTreeObserver.OnGlobalL
             throw new IllegalArgumentException("onPosCallback can not be null.");
         }
         ViewGroup parent = (ViewGroup) mAnchor;
-        RectF rectF = new RectF(ViewUtils.getLocatinInView(parent, view));
+        RectF rectF = new RectF(ViewUtils.getLocatinInView(parent, view));  //获取高亮控件布局位置信息
         if (rectF.isEmpty()) {
             return this;
         }
