@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpannableStringDemo</string>
+    <string name="baby_is_best">宝宝最棒，宝宝最美，宝宝最萌了</string>
+    <string name="baby_memeda">宝宝最萌了</string>
+</resources>

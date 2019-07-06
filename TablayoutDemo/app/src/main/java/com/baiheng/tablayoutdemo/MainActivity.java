@@ -1,8 +1,8 @@
 package com.baiheng.tablayoutdemo;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OnTabSelectListener{
 
-    private Context mContext = this;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private final String[] mTitles = {
             "华为","小米","oppo","vivo","苹果","一加","荣耀"
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout);
+        //设置fragment显示内容
         for (String title : mTitles) {
             mFragments.add(SimpleCardFragment.getInstance(title));
         }
@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     @Override
     public void onTabSelect(int position) {
-
+        Toast.makeText(MainActivity.this, mTitles[position], Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onTabReselect(int position) {
-
+        Toast.makeText(MainActivity.this, mTitles[position], Toast.LENGTH_SHORT).show();
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {

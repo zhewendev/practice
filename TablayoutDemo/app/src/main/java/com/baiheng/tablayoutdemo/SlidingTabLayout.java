@@ -15,15 +15,10 @@ import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
@@ -32,14 +27,14 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
 
     private Context mContext;
     private ViewPager mViewPager;
-    private ArrayList<String> mTitles;  //  todo
+    private ArrayList<String> mTitles;
     private LinearLayout mTabsContainer;
     private int mCurrentTab;
     private float mCurrentPositionOffset;
     private int mTabCount;
     private Rect mIndicatorRect = new Rect();
     private Rect mTabRect = new Rect();
-    private GradientDrawable mIndicatorDrawable = new GradientDrawable();   //todo
+    private GradientDrawable mIndicatorDrawable = new GradientDrawable();
 
     private Paint mRectPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Paint mDividerPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -170,7 +165,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         this.mViewPager.removeOnPageChangeListener(this);
         this.mViewPager.addOnPageChangeListener(this);
         notifyDataSetChanged();
-    }
+}
 
 
     /**
@@ -180,6 +175,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mTabsContainer.removeAllViews();
         this.mTabCount = mTitles == null ? mViewPager.getAdapter().getCount() : mTitles.size();
         View tabView;
+        //更新tab标题栏
         for (int i = 0; i < mTabCount; i++) {
             tabView = View.inflate(mContext, R.layout.layout_tab, null);
             CharSequence pageTitle = mTitles == null ? mViewPager.getAdapter().getPageTitle(i) : mTitles.get(i);
@@ -232,7 +228,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mTabsContainer.addView(tabView, position, lp_tab);
     }
 
-
+    /** 设置Tab栏标题样式 */
     private void updateTabStyles() {
         for (int i = 0; i < mTabCount; i++) {
             View v = mTabsContainer.getChildAt(i);
@@ -322,7 +318,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         float left = currentTabView.getLeft();
         float right = currentTabView.getRight();
 
-        //for mIndicatorWidthEqualTitle
+        //
         if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
             TextView tab_title = (TextView) currentTabView.findViewById(R.id.tv_tab_title);
             mTextPaint.setTextSize(mTextSize);
@@ -338,7 +334,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             left = left + mCurrentPositionOffset * (nextTabLeft - left);
             right = right + mCurrentPositionOffset * (nextTabRight - right);
 
-            //for mIndicatorWidthEqualTitle
+            //
             if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
                 TextView next_tab_title = (TextView) nextTabView.findViewById(R.id.tv_tab_title);
                 mTextPaint.setTextSize(mTextSize);
@@ -350,7 +346,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
 
         mIndicatorRect.left = (int) left;
         mIndicatorRect.right = (int) right;
-        //for mIndicatorWidthEqualTitle
+        //
         if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
             mIndicatorRect.left = (int) (left + mMargin - 1);
             mIndicatorRect.right = (int) (right - mMargin - 1);
@@ -359,7 +355,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mTabRect.left = (int) left;
         mTabRect.right = (int) right;
 
-        if (mIndicatorWidth < 0) {   //indicatorWidth小于0时,原jpardogo's PagerSlidingTabStrip
+        if (mIndicatorWidth < 0) {   //indicatorWidth小于0时
 
         } else {//indicatorWidth大于0时,圆角矩形以及三角形
             float indicatorLeft = currentTabView.getLeft() + (currentTabView.getWidth() - mIndicatorWidth) / 2;
@@ -458,7 +454,6 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         }
     }
 
-    //setter and getter
     public void setCurrentTab(int currentTab) {
         this.mCurrentTab = currentTab;
         mViewPager.setCurrentItem(currentTab);
