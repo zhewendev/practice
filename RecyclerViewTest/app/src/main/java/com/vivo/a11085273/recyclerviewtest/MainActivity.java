@@ -1,10 +1,11 @@
 package com.vivo.a11085273.recyclerviewtest;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +25,40 @@ public class MainActivity extends AppCompatActivity {
 //        LinearLayoutManager layoutManager = new
 //                LinearLayoutManager(this);
 //        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView.setLayoutManager(layoutManager);
-        FruitAdapter adapter = new FruitAdapter(fruitList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        final FruitAdapter adapter = new FruitAdapter(fruitList);
+//        QuickAdapter<Fruit> adapter = new QuickAdapter<Fruit>(fruitList) {
+//            @Override
+//            public int getLayoutId(int viewType) {
+//                return R.layout.fruit_item;
+//            }
+//
+//            @Override
+//            public void convert(VH hold, Fruit data, int positon) {
+//                hold.setText(R.id.fruit_name, data.getName());
+//            }
+//        };
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+//        recyclerView.addItemDecoration(new LeftAndRightTagDecoration(this));
+        recyclerView.addItemDecoration(new SectionDecoration(this, new SectionDecoration.DecorationCallback() {
+            @Override
+            public long getGroupId(int position) {
+                return Character.toUpperCase(fruitList.get(position).getName().charAt(0));
+            }
+
+            @Override
+            public String getGroupFirstLine(int position) {
+                return  fruitList.get(position).getName().substring(0, 1).toUpperCase();
+            }
+        }));
         recyclerView.setAdapter(adapter);
+        recyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(recyclerView) {
+            @Override
+            public void onItemClick(RecyclerView.ViewHolder vh) {
+                Toast.makeText(MainActivity.this, vh.getAdapterPosition() + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void initFruits() {
