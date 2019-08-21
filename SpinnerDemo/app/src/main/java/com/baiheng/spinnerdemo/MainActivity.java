@@ -3,6 +3,8 @@ package com.baiheng.spinnerdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
@@ -18,6 +20,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        VelocityTracker velocityTracker = VelocityTracker.obtain();
+        velocityTracker.addMovement(event);
+        velocityTracker.computeCurrentVelocity(1000);
+        int xVelocity = (int) velocityTracker.getXVelocity();
+        int yVelocity = (int) velocityTracker.getYVelocity();
+        return super.onTouchEvent(event);
     }
 
     private void initView() {
@@ -51,5 +64,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
     }
+
+
 }

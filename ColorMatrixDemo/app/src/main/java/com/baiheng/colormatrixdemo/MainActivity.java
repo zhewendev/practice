@@ -1,28 +1,21 @@
 package com.baiheng.colormatrixdemo;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.Animator;
 import android.app.Activity;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 
 import java.lang.reflect.Method;
-
 public class MainActivity extends AppCompatActivity {
 
     private LottieAnimationView animationView;
@@ -60,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         animationView.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
-
             }
 
             @Override
@@ -80,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
 //    @Override
 //    public void onWindowFocusChanged(boolean hasFocus) {
@@ -111,5 +104,6 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         return super.onKeyDown(keyCode, event);
+
     }
 }

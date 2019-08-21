@@ -1,6 +1,7 @@
 package com.vivo.a11085273.listviewtest;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -42,6 +44,7 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
 //        TextView fruitName = (TextView) view.findViewById(R.id.fruit_name);
 //        fruitImage.setImageResource(fruit.getImageId());
 //        fruitName.setText(fruit.getName());
+        LinearLayoutManager
         return view;
     }
 

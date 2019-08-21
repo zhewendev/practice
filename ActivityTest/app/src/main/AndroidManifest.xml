@@ -24,7 +24,7 @@
 
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="com.vivo.a11085273.activitytest.ACTION_START" />
+                <action android:name="com.vivo.a11085273.activitytest.action.START" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

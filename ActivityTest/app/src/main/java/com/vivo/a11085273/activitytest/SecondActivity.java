@@ -19,10 +19,16 @@ public class SecondActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.putExtra("data_return","Hello FirstActivity");
+//                setResult(RESULT_OK, intent);
+//                finish();
                 Intent intent = new Intent();
-                intent.putExtra("data_return","Hello FirstActivity");
-                setResult(RESULT_OK, intent);
-                finish();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory("com.vivo.a11085273.activitytest.CATEGORY");
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+//                intent.setClassName("com.vivo.a11085273.activitytest","com.vivo.a11085273.activitytest.ThirdActivity");
+                startActivity(intent);
             }
         });
     }
