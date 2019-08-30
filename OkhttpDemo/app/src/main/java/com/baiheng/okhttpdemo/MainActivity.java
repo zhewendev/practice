@@ -1,13 +1,17 @@
 package com.baiheng.okhttpdemo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
+import android.util.LruCache;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import com.baiheng.mylibrary.XString;
+import com.baiheng.mylibrary2.TestDemo;
 import com.baiheng.okhttpdemo.R;
 
 import java.io.File;
@@ -15,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.Writer;
+import java.security.MessageDigest;
 import java.util.HashMap;
 
 import okhttp3.Call;
@@ -31,9 +36,11 @@ import okhttp3.internal.http2.Header;
 import okio.BufferedSource;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    /**
+     * {@link #showResponse}
+     */
     TextView responseText;
-
+    /** {@link #onClick*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button sendRequest = findViewById(R.id.send_request);
         responseText = findViewById(R.id.response_text);
         sendRequest.setOnClickListener(this);
-
+//        XString.isEmpty("nihao");
+//        TestDemo testDemo = new TestDemo();
+//        testDemo.isFirstRun();
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher_background);
+//        bitmap.getByteCount();
+//        try {
+//            final MessageDigest mDigest = MessageDigest.getInstance("MD5");
+//        } catch (Exception e) {
+//
+//        }
     }
 
 
@@ -66,20 +82,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .build();
                     //调用OkHttpClient的newCall()方法来创建一个Call对象
                     //调用他的execute()方法来发送并获取服务器返回的数据
-                    Response response = client.newCall(request).execute();
-//                    client.newCall(request).enqueue(new Callback() {
-//                        @Override
-//                        public void onFailure(Call call, IOException e) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onResponse(Call call, Response response) throws IOException {
-//
-//                        }
-//                    });
-                    String responseData = response.body().string();
-                    showResponse(responseData);
+//                    Response response = client.newCall(request).execute();
+                    client.newCall(request).enqueue(new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
+
+                        }
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+
+                        }
+                    });
+//                    String responseData = response.body().string();
+//                    showResponse(responseData);
                 } catch (Exception e) {
                     e.printStackTrace();
                     InputStream inp = System.in;
@@ -87,11 +103,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
     }
+    private void showResponse(int i) {
+
+    }
 
     /**
      * 将数据显示到界面上
      *
      * @param response 要显示的数据
+     *
      */
     private void showResponse(final String response) {
         runOnUiThread(new Runnable() {
@@ -102,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
 //private void okHttpPostFormData(String url) {
 //    //POST参数构造MultipartBody.Builder，表单提交
 //    HashMap<String, String> params = new HashMap<>();

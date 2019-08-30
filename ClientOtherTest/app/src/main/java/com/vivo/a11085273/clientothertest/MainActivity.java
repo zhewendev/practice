@@ -12,20 +12,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.vivo.a11085273.othertest.IMyAidlInterface;
-import com.vivo.a11085273.othertest.User;
+import com.baiheng.aidlservicedemo.IUserInterface;
+import com.baiheng.aidlservicedemo.User;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    IMyAidlInterface aidl;
+    IUserInterface aidl;
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             //绑定服务成功回调
-            aidl = IMyAidlInterface.Stub.asInterface(service);
+            aidl = IUserInterface.Stub.asInterface(service);
         }
 
         @Override
