@@ -2,6 +2,8 @@ package com.baiheng.multiplelanguagedemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -68,35 +70,40 @@ public class MainActivity extends AppCompatActivity {
                 mHandler.sendMessage(message);
             }
         }).start();
-//        Locale locale = getResources().getConfiguration().locale;
-//        String language = getLanguageEnv();
-//        TextView textView = (TextView) findViewById(R.id.language_code);
-//        textView.setText(language);
+//        TextView textView = (TextView) findViewById(R.id.textView_region);
+//        SharedPreferences mferences = getSharedPreferences("data",MODE_PRIVATE);
+//        textView.setText(mferences.getString("textcontent",getString(R.string.text_content)));
+//        textView.setText(R.string.text_content);
+
+        Locale locale = getResources().getConfiguration().locale;
+        String language = getLanguageEnv();
+        TextView textView = (TextView) findViewById(R.id.language_code);
+        textView.setText(language);
 
 
     }
-//    private String getLanguageEnv() {
-////        Locale l = Locale.getDefault();
-//        Locale l = getResources().getConfiguration().locale;
-//        String language = l.getLanguage();
-//        String country = l.getCountry().toLowerCase();
-//        if ("zh".equals(language)) {
-//            if ("cn".equals(country)) {
-//                language = "zh-CN";
-//            } else if ("tw".equals(country)) {
-//                language = "zh-TW";
-//            } else if ("hk".equals(country)) {
-//                language = "zh-HK";
-//            }
-//        } else if ("pt".equals(language)) {
-//            if ("br".equals(country)) {
-//                language = "pt-BR";
-//            } else if ("pt".equals(country)) {
-//                language = "pt-PT";
-//            }
-//        }
-//        return language;
-//    }
+    private String getLanguageEnv() {
+//        Locale l = Locale.getDefault();
+        Locale l = getResources().getConfiguration().locale;
+        String language = l.getLanguage();
+        String country = l.getCountry().toLowerCase();
+        if ("zh".equals(language)) {
+            if ("cn".equals(country)) {
+                language = "zh-CN";
+            } else if ("tw".equals(country)) {
+                language = "zh-TW";
+            } else if ("hk".equals(country)) {
+                language = "zh-HK";
+            }
+        } else if ("pt".equals(language)) {
+            if ("br".equals(country)) {
+                language = "pt-BR";
+            } else if ("pt".equals(country)) {
+                language = "pt-PT";
+            }
+        }
+        return language;
+    }
 
     @Override
     protected void onDestroy() {
