@@ -1,11 +1,14 @@
 package com.baiheng.junittestdemo;
 
+import android.text.TextUtils;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 public class DateUtil {
+
 
     /**
      * 英文全称  如：2017-11-01 22:11:00
@@ -33,5 +36,9 @@ public class DateUtil {
         Date date = new Date(lt);
         res = simpleDateFormat.format(date);
         return res;
+    }
+
+    public static String stampToDate(String string) {
+        return string;
     }
 }

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">InfoCollectionTest</string>
+    <string name="pan_format">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+</resources>

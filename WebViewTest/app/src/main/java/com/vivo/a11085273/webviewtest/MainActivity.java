@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 if (url == null) return false;
 
+                if (url.contains("google")) {
+                    Toast.makeText(getApplicationContext(),"chongdingxiang",Toast.LENGTH_LONG).show();
+                }
                 try{
                     if(!url.startsWith("http://") && !url.startsWith("https://")){
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));

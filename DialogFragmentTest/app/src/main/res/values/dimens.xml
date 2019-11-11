@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp328">328dp</dimen>
+    <dimen name="dp16">16dp</dimen>
+    <dimen name="dp56">56dp</dimen>
+    <dimen name="dp244">244dp</dimen>
+    <dimen name="dp132">132dp</dimen>
+</resources>
