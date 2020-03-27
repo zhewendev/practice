@@ -11,9 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        MyDialogFragment myDialogFragment = new MyDialogFragment();
-//        myDialogFragment.show(getSupportFragmentManager(),"mydialogFragment");
-        TestUnionDialog testUnionDialog = new TestUnionDialog(this);
-        testUnionDialog.show();
+        MyDialog myDialog = new MyDialog(MainActivity.this);
+        myDialog.show();
     }
 }

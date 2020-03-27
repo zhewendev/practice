@@ -8,8 +8,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.baiheng.mylibrary.SingleTon;
+import com.squareup.leakcanary.RefWatcher;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
@@ -57,11 +61,19 @@ public class MainActivity extends AppCompatActivity {
 
     private Handler mHandler = new WeakRefHandler(mCallback);
 
+    private Handler mmHandler = new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -79,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
         String language = getLanguageEnv();
         TextView textView = (TextView) findViewById(R.id.language_code);
         textView.setText(language);
+
+        String string = "";
+        boolean b = TextUtils.isEmpty(string);
+        Log.e("MainActivity",b + "");
+        SingleTon.getInstance(this).print();
 
 
     }
@@ -111,5 +128,19 @@ public class MainActivity extends AppCompatActivity {
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
         }
+        RefWatcher refWatcher = LanguageApplication.getRefWatcher(this);
+        refWatcher.watch(this);
+
+//        try {
+//            // ....
+//        } catch (Exception e) {
+//            // ...
+//        } finally {
+//            try {
+//                // ...
+//            } catch (Exception e) {
+//                // ...
+//            }
+//        }
     }
 }

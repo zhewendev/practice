@@ -44,7 +44,6 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
 //        TextView fruitName = (TextView) view.findViewById(R.id.fruit_name);
 //        fruitImage.setImageResource(fruit.getImageId());
 //        fruitName.setText(fruit.getName());
-        LinearLayoutManager
         return view;
     }
 

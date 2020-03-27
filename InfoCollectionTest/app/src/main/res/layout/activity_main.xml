@@ -58,7 +58,8 @@
             android:layout_centerVertical="true"
             android:textCursorDrawable="@drawable/vivo_information_collection_edit_cursor"
             android:background="@null"
-            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true"
             android:hint="email"
             android:textSize="14sp"
             android:textColor="#000000"/>

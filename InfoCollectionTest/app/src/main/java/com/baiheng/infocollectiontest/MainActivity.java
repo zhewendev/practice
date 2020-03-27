@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -34,6 +35,8 @@ public class MainActivity extends Activity implements ClearEditText.InputListene
     private EditText mUserPan;
     private Button mInfoSubmit;
     private Button mShow;
+    private RelativeLayout mNameLayout;
+    private RelativeLayout mEmailLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,10 @@ public class MainActivity extends Activity implements ClearEditText.InputListene
         mUserEmail = (ClearEditText) findViewById(R.id.edit_email);
         mClearEmail = (ImageView) findViewById(R.id.clear_email);
         mEmailSubline = (View) findViewById(R.id.edit_email_subline);
+        mNameLayout = (RelativeLayout) findViewById(R.id.item_name);
+        mEmailLayout = (RelativeLayout) findViewById(R.id.item_email);
+        mEmailLayout.setOnClickListener(this);
+        mNameLayout.setOnClickListener(this);
         mShow = (Button) findViewById(R.id.edit_show);
         mUserName.setInputListener(this);
         mUserName.setType(TYPE);
@@ -65,6 +72,8 @@ public class MainActivity extends Activity implements ClearEditText.InputListene
                     mNameSubline.setBackgroundColor(ContextCompat.getColor(this,R.color.colorAccent));
                     if (length > 0) {
                         mClearName.setVisibility(View.VISIBLE);
+                    } else {
+                        mClearName.setVisibility(View.GONE);
                     }
                 } else {
                     mClearName.setVisibility(View.GONE);
@@ -100,6 +109,12 @@ public class MainActivity extends Activity implements ClearEditText.InputListene
                 break;
             case R.id.edit_show:
                 validate();
+            case R.id.item_name:
+                mUserName.hasFocus();
+                break;
+            case R.id.item_email:
+                mUserEmail.hasFocus();
+                break;
             default:
                 break;
         }

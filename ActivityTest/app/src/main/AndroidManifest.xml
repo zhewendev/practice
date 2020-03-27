@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SecondActivity">
+        <activity android:name=".SecondActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.vivo.a11085273.activitytest.action.START" />
 

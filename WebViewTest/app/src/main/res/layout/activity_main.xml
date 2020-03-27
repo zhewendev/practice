@@ -3,42 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-        <!--<Button-->
-            <!--android:id="@+id/btn_back"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="BACK"/>-->
-        <!--<TextView-->
-            <!--android:id="@+id/text_title"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:gravity="center"-->
-            <!--android:maxLines="1"/>-->
-        <!--<Button-->
-            <!--android:id="@+id/btn_refresh"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="刷新"/>-->
-        <!--<Button-->
-            <!--android:id="@+id/btn_top"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="TOP"/>-->
-    <!--</LinearLayout>-->
     <Button
-        android:id="@+id/btn_icon"
-        android:layout_width="wrap_content"
+        android:id="@+id/open_webview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:text="回到顶部"/>
-    <com.vivo.a11085273.webviewtest.MyWebView
-        android:id="@+id/wView"
+        android:text="open_webview"/>
+    <RelativeLayout
+        android:id="@+id/webview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

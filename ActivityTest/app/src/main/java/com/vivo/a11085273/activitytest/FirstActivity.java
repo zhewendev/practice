@@ -34,7 +34,11 @@ public class FirstActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+//                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+//                startActivityForResult(intent,1);
+                Intent intent = new Intent();
+                ComponentName componentName = new ComponentName("com.vivo.a11085273.activitytest","com.vivo.a11085273.activitytest.SecondActivity");
+                intent.setComponent(componentName);
                 startActivityForResult(intent,1);
             }
         });
