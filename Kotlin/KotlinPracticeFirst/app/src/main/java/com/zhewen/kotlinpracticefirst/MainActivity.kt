@@ -12,10 +12,10 @@ class MainActivity : AppCompatActivity() {
 }
 
 fun main(args: Array<String>) {
-    val expression = "3 / 1"
+    val inputExpression = "3 / 1"
     firstQuestion()
     secondQuestion()
-    thirdQuestion(expression)
+    thirdQuestion(inputExpression)
 }
 
 fun firstQuestion() {
@@ -74,7 +74,7 @@ fun thirdQuestion(expression: String) {
             println("output:${it(arg[0].toInt(), arg[2].toInt())}")
         }
     } catch (e: Exception) {
-        println("Wrong expression,please enter the correct expression${e}")
+        println("Wrong expression,please enter the correct expression ${e}")
     }
 }
 
