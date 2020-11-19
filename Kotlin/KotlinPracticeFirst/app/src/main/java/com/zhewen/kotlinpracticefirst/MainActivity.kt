@@ -3,6 +3,9 @@ package com.zhewen.kotlinpracticefirst
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import java.lang.Exception
+import java.lang.RuntimeException
+import kotlin.properties.Delegates
+import kotlin.reflect.KProperty
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,12 +14,30 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-fun main(args: Array<String>) {
-    val inputExpression = "3 / 1"
-    firstQuestion()
-    secondQuestion()
-    thirdQuestion(inputExpression)
+
+class User {
+    var name: String by Delegates.observable("初始值") {
+            prop, old, new ->
+        println("旧值：$old -> 新值：$new")
+    }
+    val age: Int = lazy {
+
+    }
+
+    fun fail() {
+        throw RuntimeException("kkk")
+    }
 }
+
+
+fun main(args: Array<String>) {
+    val user = User()
+    user.name = "第一次赋值"
+    user.name = "第二次赋值"
+}
+
+//调用
+ 	// User		User2
 
 fun firstQuestion() {
 
