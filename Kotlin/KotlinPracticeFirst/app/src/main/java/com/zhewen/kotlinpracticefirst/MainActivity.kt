@@ -2,15 +2,22 @@ package com.zhewen.kotlinpracticefirst
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Exception
 import java.lang.RuntimeException
+import javax.inject.Inject
 import kotlin.properties.Delegates
-import kotlin.reflect.KProperty
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var truck: Truck
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        truck.deliver()
     }
 }
 
@@ -20,9 +27,6 @@ class User {
             prop, old, new ->
         println("旧值：$old -> 新值：$new")
     }
-    val age: Int = lazy {
-
-    }
 
     fun fail() {
         throw RuntimeException("kkk")
@@ -30,11 +34,11 @@ class User {
 }
 
 
-fun main(args: Array<String>) {
-    val user = User()
-    user.name = "第一次赋值"
-    user.name = "第二次赋值"
-}
+//fun main(args: Array<String>) {
+//    val user = User()
+//    user.name = "第一次赋值"
+//    user.name = "第二次赋值"
+//}
 
 //调用
  	// User		User2

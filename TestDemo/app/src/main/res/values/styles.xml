@@ -7,5 +7,22 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="CheckBox" parent="AppTheme">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="ProgressBar" parent="android:Widget.Holo.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/vivo_loading_progress_bg</item>
+        <item name="android:indeterminateDuration">1400</item>
+    </style>
+
+
+    <style name="Widget.MaterialComponents.CompoundButton.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+<!--        <item name="enforceMaterialTheme">true</item>-->
+<!--        <item name="useMaterialThemeColors">true</item>-->
+<!--        <item name="android:minWidth">?attr/minTouchTargetSize</item>-->
+<!--        <item name="android:minHeight">?attr/minTouchTargetSize</item>-->
+    </style>
 
 </resources>
